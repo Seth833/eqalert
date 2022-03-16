@@ -85,7 +85,10 @@ def speak(phrase, play, sound_file_path):
 
     except Exception as e:
         eqa_settings.log(
-            "sound_speak: Error on line " + str(sys.exc_info()[-1].tb_lineno) + ": " + str(e)
+            "sound_speak: Error on line "
+            + str(sys.exc_info()[-1].tb_lineno)
+            + ": "
+            + str(e)
         )
 
 
@@ -99,11 +102,13 @@ def alert(config, line_type):
                 tts = gtts.gTTS(text=phrase, lang="en")
                 tts.save(sound_file_path + phrase + ".wav")
             play_sound(sound_file_path + phrase + ".wav")
-        )
 
     except Exception as e:
         eqa_settings.log(
-            "sound_alert: Error on line " + str(sys.exc_info()[-1].tb_lineno) + ": " + str(e)
+            "sound_alert: Error on line "
+            + str(sys.exc_info()[-1].tb_lineno)
+            + ": "
+            + str(e)
         )
 
 
